@@ -1,0 +1,48 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div id="app">
+  <div  class="brand">
+     <div  class="title centerTitle">
+         <img src="../assets/images/logo.png" alt="logo" class="logo img-fluid"></div>
+  </div>
+
+  <div class="m-5 card text-center">
+    <div class="card-header">
+      <ul class="nav nav-pills card-header-pills">
+        <li *ngIf="this.isConnected" class="nav-item">
+          <a class="nav-link" [routerLink]="['/vote']">Vote</a>
+        </li>
+        <li class="nav-item" *ngIf="!this.isConnected" >
+          <a  class="nav-link" [routerLink]="['/login']">Login</a>
+        </li>
+        <li  *ngIf="!this.isConnected" class="nav-item">
+          <a  class="nav-link" [routerLink]="['/subscribe']">Inscription</a>
+        </li>
+        <li class="nav-item">
+          <a  class="nav-link" [routerLink]="['/ranking']">Classement</a>
+        </li>
+        <li *ngIf="this.isConnected" class="nav-item">
+          <a class="nav-link" (click)="logout()" tabindex="-1" aria-disabled="true">Logout</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</div>
+
+<!-- <a [routerLink]="['/blog', 1]">Modifier le blog .NET Core</a>
+
+<div>
+  <a [routerLink]="['/subscribe']">Inscription</a>
+</div>
+
+<div>
+  <a [routerLink]="['/login']">Login</a>
+</div>
+
+<div>
+  <a (click)="logout()">Logout</a>
+</div> -->
+

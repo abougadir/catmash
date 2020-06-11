@@ -1,0 +1,75 @@
+body,html{
+    font-family:Roboto,Arial,sans-serif;
+    background:#eceff1;
+    color:rgba(0,0,0,.87)
+}
+.secondary-text{
+    color:rgba(0,0,0,.54)
+}
+.button,.center{
+    text-align:center
+}
+.button{
+    width:250px;
+    display:inline-block;
+    padding:8px;
+    margin:15px;
+    text-decoration:none;
+    font-weight:500;
+    background:#039be5;
+    color:#fff;
+    border:1px solid #039be5;
+    border-radius:3px;
+    font-size:16px;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,.26)
+}
+.button:hover{
+    text-decoration:none;
+    -webkit-transition:color .2s;
+    transition:color .2s;
+    color:#000;
+    cursor:pointer
+}
+.title.centerTitle{
+    text-align:center;
+    font-size:28px
+}
+.image.catPicture{
+    max-width:400px;
+    height:400px;
+    background-size:cover;
+    background-position:50%;
+    margin:40px auto;
+    box-shadow:0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+    border:5px solid #fff;
+    border-radius:2px
+}
+.image .image-selection.catPicture{
+    opacity:0;
+    background-color:rgba(0,0,0,.7);
+    color:#fff;
+    text-align:center;
+    height:100%
+}
+.image.catPicture:hover{
+    -webkit-transition:border .4s;
+    transition:border .4s;
+    border:5px solid #039be5
+}
+
+
+.image:hover .image-selection.catPicture{
+    -webkit-transition:opacity .3s;
+    transition:opacity .3s;
+    opacity:1
+}
+.image .image-selection button.catPicture{
+    position:relative;
+    top:45%
+}
+.image-64[data-v-b90bac8a]{
+    height:64px;
+    width:64px;
+    background-size:cover;
+    background-position:50%
+}
