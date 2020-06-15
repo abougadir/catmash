@@ -1,7 +1,7 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, Injector } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
 import { User } from '../core/models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-subscription',
@@ -17,9 +17,9 @@ export class SubscriptionComponent {
   private POST_SUBSCRIBE: string;
 
   constructor(
-    private http: HttpClient, @Inject('BASE_URL') baseUrl: string
+    private http: HttpClient, private injector: Injector, @Inject('BASE_URL') baseUrl: string
   ) {
-    this.POST_SUBSCRIBE = baseUrl + 'user/subscribe';
+    this.POST_SUBSCRIBE = baseUrl + 'api/user/subscribe';
   }
 
   onSubmit() {
@@ -35,6 +35,12 @@ export class SubscriptionComponent {
           ),
           Password: this.motDePasse
         })
-      .subscribe();
+      .subscribe(success => {
+        this.router.navigateByUrl('/login');
+      });
+  }
+
+  protected get router(): Router {
+    return this.injector.get(Router);
   }
 }
