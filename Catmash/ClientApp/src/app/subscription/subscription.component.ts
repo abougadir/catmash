@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { User } from '../core/models/user.model';
@@ -14,11 +14,13 @@ export class SubscriptionComponent {
   public email: string;
   public motDePasse: string;
 
-  private readonly POST_SUBSCRIBE = environment.apiUrl + 'user/subscribe'
+  private POST_SUBSCRIBE: string;
 
   constructor(
-    private http: HttpClient
-  ) { }
+    private http: HttpClient, @Inject('BASE_URL') baseUrl: string
+  ) {
+    this.POST_SUBSCRIBE = baseUrl + 'user/subscribe';
+  }
 
   onSubmit() {
     this
