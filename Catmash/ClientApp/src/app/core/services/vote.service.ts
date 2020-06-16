@@ -9,7 +9,7 @@ import { VoteResult } from '../models/VoteResult.model';
 export class VoteService {
   private VOTE_API_URL;
   private RANK_API_URL;
-  private readonly PUT_VOTE_URL = (voteId: number) => { return this.VOTE_API_URL + voteId};
+  private readonly PUT_VOTE_URL = (voteId: number) => { return this.VOTE_API_URL + '/' + voteId};
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string)
   {
     this.VOTE_API_URL = baseUrl + 'api/vote';
